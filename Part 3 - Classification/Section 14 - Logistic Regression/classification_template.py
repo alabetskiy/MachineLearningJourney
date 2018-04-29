@@ -18,10 +18,8 @@ sc_X = StandardScaler()
 X_train = sc_X.fit_transform(X_train)
 X_test = sc_X.transform(X_test)
 
-# Fitting logistic regression in to the Training Set
-from sklearn.linear_model import LogisticRegression
-classifier = LogisticRegression(random_state=0)
-classifier.fit(X_train, y_train)
+# Fitting the classifier to the Training Set
+### YOUR CLASSIFIER HERE
 
 # Predict Test set results
 y_pred = classifier.predict(X_test)
@@ -29,8 +27,6 @@ y_pred = classifier.predict(X_test)
 # Making the Confusion Matrix 
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
-
-
 
 # Visualising the Test set results
 from matplotlib.colors import ListedColormap
@@ -49,7 +45,3 @@ plt.xlabel('Age')
 plt.ylabel('Estimated Salary')
 plt.legend()
 plt.show()
-
-
-# evaluate model
-print('score for logistic regression - version 1 : {0:.2f}'.format(classifier.score(X_train, y_train)))
